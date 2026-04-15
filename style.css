@@ -1,0 +1,357 @@
+ * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--fm);
+    color: #1f1f11;
+}
+
+html,
+body {
+    background-color: white;
+    color: black;
+}
+
+@font-face {
+    font-family: newf1;
+    src: url(fonts/BBHBogle-Regular.ttf);
+}
+
+:root {
+    --fm: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --fs-base: 16px;
+    --nav-mar: 6vh 3.5vw;
+    --hero-pad: 0vh 2vw;
+}
+
+.page1 {
+    width: 100%;
+    height: 250vh;
+}
+
+.light {
+    display: none;
+}
+
+nav {
+    width: 45%;
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--nav-mar);
+    cursor: pointer;
+}
+
+.vdodv {
+    width: 96.5%;
+    height: 70vh;
+    display: flex;
+    justify-content: end;
+    margin-top: -6vh;
+}
+
+.vdo {
+    width: 57%;
+    height: 70vh;
+    position: fixed;
+    top: 7vh;
+    right: 4vw;
+}
+
+.vdo #video {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5vw;
+    object-fit: cover;
+}
+
+.vdoftr {
+    width: 96.5%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.pageh1 {
+
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.pageh1 h1 {
+    font-size: 10vw;
+    font-weight: 800;
+    font-family: newf1;
+    font-stretch: 400%;
+}
+
+.pageh2 {
+    width: 100%;
+    height: 40vh;
+    background-color: rgba(175, 238, 238, 0.284);
+    display: flex;
+    justify-content: center;
+    align-items: self-end;
+}
+
+.pageh2 h1 {
+    font-size: 12vw;
+    font-weight: 400;
+    display: contents;
+    font-family: newf1;
+    letter-spacing: -4px;
+    display: inline-block;
+    /* font-stretch: 400%; */
+}
+
+.pageh3 {
+    width: 100%;
+    height: 40vh;
+    background-color: rgba(175, 238, 238, 0.398);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 4vw;
+}
+
+.pageh3 #mot,
+#agn {
+    font-size: 12vw;
+    font-weight: 400;
+    font-family: newf1;
+    letter-spacing: -5px;
+    display: inline-block;
+    white-space: nowrap;
+    /* flex-shrink: ; */
+
+}
+
+.hdftr {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+}
+
+.page1 button {
+    width: 12vw;
+    height: 7vh;
+    border-radius: .5vw;
+    border: 1.4px solid black;
+    color: black;
+    font-size: .8rem;
+    font-weight: 600;
+    margin-top: 5vh;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    background-color: transparent;
+    margin: 15vh 43.8%;
+}
+
+.page2 {
+    width: 100%;
+    height: 130vh;
+    background-color: #1f1f1f;
+}
+
+.hero {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--hero-pad);
+}
+
+.page2 .hero .img {
+    width: 55%;
+    height: 65vh;
+    border-radius: 1.5vw;
+    overflow: hidden;
+}
+
+.page2 .hero .img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5vw;
+    object-fit: cover;
+    margin-top: 5vh;
+}
+
+.page2 #h2,
+#h3 {
+    color: white;
+}
+
+.page2 #btn {
+    width: 12vw;
+    height: 7vh;
+    border-radius: .5vw;
+    border: 1.4px solid white;
+    color: white;
+    font-size: .8rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    background-color: transparent;
+    margin: 0vh 43.3vw;
+}
+
+.page3 {
+    width: 100%;
+    height: 130vh;
+    background-color: white;
+}
+
+.page4 {
+    width: 100%;
+    height: 100vh;
+    background-color: #1f1f1f;
+}
+
+#page3-h1 {
+    font-size: 3rem;
+    padding-top: 17vh;
+    padding-left: 10vw;
+}
+
+.page3-con {
+    width: 80%;
+    height: 70%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page3-con1 {
+    width: 60%;
+    height: 100%;
+}
+
+#p {
+    font-size: .9rem;
+}
+
+#p {
+    padding: 2vh 0px;
+}
+
+.page3-con .page3-con2 {
+    width: 33%;
+    height: 100%;
+}
+
+.pag3-con1-div1 {
+    width: 100%;
+    border-bottom: 1.3px solid rgba(0, 0, 0, 0.179);
+    height: 6vh;
+    margin-top: 13vh;
+}
+
+.pag3-con1-div {
+    width: 100%;
+    height: 30%;
+    background-color: aqua;
+}
+
+.pag3-con1-div1 h4 {
+    margin-top: -8%;
+}
+
+.pg-con {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1.3px solid rgba(0, 0, 0, 0.179);
+}
+
+.pg-con #h5 {
+    font-size: .8rem;
+    font-weight: 400;
+}
+
+.page3-img {
+    width: 100%;
+    height: 100%;
+}
+
+.page3-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3vw;
+}
+
+.pg4-con {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1%;
+}
+
+#migs {
+    width: 20%;
+    height: 10%;
+    margin-top: 4%;
+}
+
+.ftr {
+    display: flex;
+    width: 50%;
+    height: 100%;
+}
+
+.div1,
+.div2,
+.div3 {
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+}
+
+#h7 {
+    margin: 10% 0;
+    color: white;
+}
+
+.pg4-ftr {
+    width: 90%;
+    height: 24%;
+    margin: 2% auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1.5px solid rgba(255, 255, 255, 0.535);
+}
+
+.h10 {
+    font-weight: 200;
+    font-size: small;
+    opacity: .8;
+}
+
+.h11 {
+    opacity: .8;
+}
+
+.pg4-ftr h5 {
+    color: white;
+    opacity: .8;
+    font-weight: 300;
+} 

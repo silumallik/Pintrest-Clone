@@ -1,0 +1,31 @@
+@import "tailwindcss";
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+.input {
+  @apply w-70 rounded-lg px-2 py-2 bg-pink-300 mb-3 ;
+}
+
+.btn {
+  @apply bg-red-300 text-black px-4 py-2 rounded-lg hover:bg-red-600 mt-3 w-60;
+}
+*{
+  margin: 0;padding: 0%;box-sizing: border-box;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+  width: 100%;
+  overflow-x: hidden;
+    background-color: #1f1f1f;
+}
+
+.break-inside-avoid {
+  break-inside: avoid;
+}
+
+::-webkit-scrollbar{
+  width: 0px;
+}
+
+
+
