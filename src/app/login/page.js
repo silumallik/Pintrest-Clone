@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function LoginPage() {
   const router = useRouter();
+  const { data: session } = useSession();
+  
   const [form, setForm] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState("");
@@ -53,10 +55,14 @@ export default function LoginPage() {
     setType("success");
     setMessage("Login successful ✅ ");
 
-    const sessionRes = await fetch("/api/auth/session");
-    const sessionData = await sessionRes.json();
+    // const sessionRes = await fetch("/api/auth/session");
+    // const sessionData = await sessionRes.json();
 
-    router.push(`/profile/${sessionData.user.id}`);
+    // router.push(`/profile/${sessionData.user.id}`);
+
+    if (status === "authenticated" && session?.user?.id) {
+        router.push(`/profile/${session.user.id}`);
+      }
 
   }
 
