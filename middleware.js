@@ -57,7 +57,7 @@ export const config = {
   matcher: [
     "/create",
     "/profile/:path*",
-    "/api/pins/:path*",
+    // "/api/pins/:path*",
     "/api/users/:path*",
     "/api/comments/:path*",
   ],
