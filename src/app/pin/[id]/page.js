@@ -15,8 +15,8 @@ import PinMenu from "@/components/PinMenu";
 
 
 async function getPin(id) {
-  const res = await fetch(`http://localhost:3000/api/pins/${id}`, {
-    // const res = await fetch(`${process.env.NEXT_PUBLIC_URL || ""}/api/pins/${id}`, {
+  // const res = await fetch(`http://localhost:3000/api/pins/${id}`, {
+    const res = await fetch(`${process.env.NEXTAUTH_URL || ""}/api/pins/${id}`, {
     cache: "no-store",
   });
 
