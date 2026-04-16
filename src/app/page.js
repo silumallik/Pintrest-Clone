@@ -11,7 +11,7 @@ export default function HomePage() {
   const fetchPins = async (page) => {
     try {
 
-      const res = await fetch(`${process.env.NEXTAUTH_URL}/api/pins?page=${page}`, {
+      const res = await fetch(`/api/pins?page=${page}`, {
         cache: "no-store",
       });
 
