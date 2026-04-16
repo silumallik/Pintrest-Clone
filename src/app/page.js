@@ -18,6 +18,7 @@ export default function HomePage() {
       if (!res.ok) return [];
 
       const data = await res.json();
+      console.log("Fetched pins:", data);
       return Array.isArray(data) ? data : [];
 
     } catch (error) {
