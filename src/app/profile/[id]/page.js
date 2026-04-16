@@ -9,7 +9,8 @@ import ProfileStats from "@/components/ProfileStats";
 
 
 async function getUser(id) {
-  const res = await fetch(`http://localhost:3000/api/users/${id}`, {
+  // const res = await fetch(`http://localhost:3000/api/users/${id}`, {
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/users/${id}`, {
     cache: "no-store",
   });
 
