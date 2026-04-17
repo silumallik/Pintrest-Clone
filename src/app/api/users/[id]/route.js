@@ -7,34 +7,6 @@ import { authOptions } from "@/lib/authOptions";
 
 
 
-//access user working code
-// export async function GET(req, context) {
-//   await connectDB();
-
-//   const { id } = await context.params;   // ✅ FIX
-
-//   if (!id) {
-//     console.log("id nehi aya hey")
-//     return NextResponse.json(
-//       { message: "Invalid ID" },
-//       { status: 400 }
-//     );
-//   }
-
-//   const user = await getUserById(id);
-
-//   if (!user) {
-//     console.log("user nehi aya hey")
-//     return NextResponse.json(
-//       { message: "User not found" },
-//       { status: 404 }
-//     );
-//   }
-//   console.log("user mil gaya")
-//   return NextResponse.json(user);
-// }
-
-//trying code
 export async function GET(req, context) {
 
   await connectDB();
@@ -53,7 +25,6 @@ export async function GET(req, context) {
   const currentUserId = session?.user?.id;
 
   // if (!session) return NextResponse.json({ message: "Not authenticated" }, { status: 401 });
-  console.log("SESSION:", session);
   const user = await getUserById(id, currentUserId);
   if (!user) {
     return NextResponse.json(
