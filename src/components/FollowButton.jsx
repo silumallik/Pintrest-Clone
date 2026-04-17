@@ -13,11 +13,6 @@ export default function FollowButton({
   const [loading, setLoading] = useState(false);
   const router = useRouter()
 
-  // ✅ prop change hone par state update
-  // useEffect(() => {
-  //   setIsFollowing(initialIsFollowing);
-  // }, [initialIsFollowing]);
-
   const handleFollow = async () => {
 
     if (loading) return;
