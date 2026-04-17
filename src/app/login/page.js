@@ -55,7 +55,7 @@ export default function LoginPage() {
     setType("success");
     setMessage("Login successful ✅ ");
 
-    const sessionRes = await fetch("/api/auth/session");
+    const sessionRes = await fetch(`${process.env.NEXTAUTH_URL}/api/auth/session`);
     const sessionData = await sessionRes.json();
 
     router.push(`/profile/${sessionData.user.id}`);
