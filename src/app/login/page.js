@@ -73,9 +73,9 @@ export default function LoginPage() {
     setMessage("Login successful ✅ ");
 
     // wait for session update
-    setTimeout(() => {
-      router.refresh();
-    }, 500);
+    // setTimeout(() => {
+    //   router.refresh();
+    // }, 500);
 
     console.log("STATUS:", status);
     console.log("SESSION:", session);
