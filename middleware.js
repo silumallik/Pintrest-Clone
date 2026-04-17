@@ -56,7 +56,7 @@ export default withAuth(
 export const config = {
   matcher: [
     "/create",
-    "/profile/:path*",
+    // "/profile/:path*",
     // "/api/pins/:path*",
     "/api/users/:path*",
     "/api/comments/:path*",
