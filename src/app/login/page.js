@@ -13,20 +13,9 @@ export default function LoginPage() {
   useEffect(() => {
     if (status === "authenticated" && session?.user?.id) {
       router.push(`/profile/${session.user.id}`);
-      console.log("Redrict.....",session.user.id)
     }
   }, [status, session]);
 
-  // useEffect(() => {
-  //   if (status === "authenticated") {
-  //     console.log("Redirecting...", session);
-
-  //     if (session?.user?.id) {
-  //       window.location.href = `/profile/${session.user.id}`;
-  //     }
-  //   }
-  // }, [status, session]);
-  
   const [form, setForm] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState("");
@@ -72,14 +61,6 @@ export default function LoginPage() {
 
     setType("success");
     setMessage("Login successful ✅ ");
-
-    // wait for session update
-    // setTimeout(() => {
-    //   router.refresh();
-    // }, 500);
-
-    // console.log("STATUS:", status);
-    // console.log("SESSION:", session);
 
     // const sessionRes = await fetch(`/api/auth/session`);
     // const sessionData = await sessionRes.json();
