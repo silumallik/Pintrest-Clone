@@ -16,24 +16,15 @@ export async function POST(req) {
 
     const currentUserId = session.user.id
 
-    // const result = await toggleFollow(userId, session.user._id);
     const result = await toggleFollow(userId, currentUserId);
 
     const isFollowing = result.targetUser.followers.includes(
       session.user.id
     )
 
-    //Newly Add
-    // const isFollowing =
-    //   currentUser.following.includes(targetUserId);
-
-    console.log("Current User:", currentUserId);
-    console.log("Target User:", userId);
-
     return NextResponse.json(result);
   }
   catch (error) {
-    console.log(`kiya hey : ${error}`)
     return NextResponse.json(
       { message: error }, { stauts: 500 }
     )
