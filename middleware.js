@@ -46,9 +46,18 @@ export default withAuth(
     // optional custom logic
   },
   {
+    // callbacks: {
+    //   authorized: ({ token }) => !!token,
+    // },
     callbacks: {
-      authorized: ({ token }) => !!token,
-    },
+      authorized: ({ token, req }) => {
+        const publicPaths = ["/login", "/register"];
+        const path = req.nextUrl.pathname;
+
+        if (publicPaths.includes(path)) return true;
+
+        return !!token;
+      },
   }
 );
 
