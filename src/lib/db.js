@@ -1,28 +1,3 @@
-// export const connectionstrt = "mongodb+srv://dilu:vsdilu865@cluster1.zpgle1p.mongodb.net/userDB?appName=Cluster1"
-
-// export const users = [];
-// MONGODB_URI="mongodb+srv://dilu:vsdilu865@cluster1.zpgle1p.mongodb.net/userDB?appName=Cluster1"
-// JWT_SECRET="5f2c9a8d3b7e1a6b4c2d9f0a123456789abcdef9876543210abcd1234"
-
-// working code
-// import mongoose from "mongoose";
-
-// const connectDB = async () => {
-//   if (mongoose.connection.readyState) return;
-
-//   try {
-//     await mongoose.connect(process.env.MONGODB_URI);
-//     console.log("MongoDB Connected");
-//   } catch (error) {
-//     console.error("DB Error:", error);
-//   }
-// };
-
-// export default connectDB;
-
-
-
-// trying code
 import mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI;
