@@ -67,6 +67,9 @@ export default function LoginPage() {
       router.refresh();
     }, 500);
 
+    console.log("STATUS:", status);
+    console.log("SESSION:", session);
+
     // const sessionRes = await fetch(`/api/auth/session`);
     // const sessionData = await sessionRes.json();
 
