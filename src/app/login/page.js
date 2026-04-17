@@ -10,21 +10,22 @@ export default function LoginPage() {
   const router = useRouter();
   const { data: session, status } = useSession();
 
-  // useEffect(() => {
-  //   if (status === "authenticated" && session?.user?.id) {
-  //     router.push(`/profile/${session.user.id}`);
-  //   }
-  // }, [status, session]);
-
   useEffect(() => {
-    if (status === "authenticated") {
-      console.log("Redirecting...", session);
-
-      if (session?.user?.id) {
-        window.location.href = `/profile/${session.user.id}`;
-      }
+    if (status === "authenticated" && session?.user?.id) {
+      router.push(`/profile/${session.user.id}`);
+      console.log("Redrict.....",session.user.id)
     }
   }, [status, session]);
+
+  // useEffect(() => {
+  //   if (status === "authenticated") {
+  //     console.log("Redirecting...", session);
+
+  //     if (session?.user?.id) {
+  //       window.location.href = `/profile/${session.user.id}`;
+  //     }
+  //   }
+  // }, [status, session]);
   
   const [form, setForm] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
