@@ -46,28 +46,19 @@ export default withAuth(
     // optional custom logic
   },
   {
-    // callbacks: {
-    //   authorized: ({ token }) => !!token,
-    // },
     callbacks: {
-      authorized: ({ token, req }) => {
-        const publicPaths = ["/login", "/register"];
-        const path = req.nextUrl.pathname;
-
-        if (publicPaths.includes(path)) return true;
-
-        return !!token;
-      },
+      authorized: ({ token }) => !!token,
+    },
   }
 );
 
 // Protect specific routes
 export const config = {
   matcher: [
-    "/create",
+    // "/create",
     // "/profile/:path*",
     // "/api/pins/:path*",
-    "/api/users/:path*",
-    "/api/comments/:path*",
+    // "/api/users/:path*",
+    // "/api/comments/:path*",
   ],
 };
