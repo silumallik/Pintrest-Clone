@@ -41,7 +41,6 @@ export default function CreatePin() {
       });
 
       const uploadData = await uploadRes.json();
-      console.log("UPLOAD DATA:", uploadData);
 
       if (!uploadRes.ok) {
         throw new Error(uploadData.message || "Upload failed");
@@ -49,7 +48,6 @@ export default function CreatePin() {
 
       // STEP 2: create pin
       const pinRes = await fetch("/api/pins", {
-        // console.log(pinRes);
         method: "POST",
 
         headers: {
@@ -68,13 +66,10 @@ export default function CreatePin() {
       });
 
       const pinData = await pinRes.json();
-      console.log(pinData)
 
       if (!pinRes.ok) {
         throw new Error(pinData.message || "Pin create failed");
       }
-
-      console.log("Pin created:", pinData);
 
       router.push("/");
 
