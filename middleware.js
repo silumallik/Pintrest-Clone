@@ -55,7 +55,8 @@ export default withAuth(
 // Protect specific routes
 export const config = {
   matcher: [
-    "/create",
+    "/profile"
+    // "/create",
     // "/profile/:path*",
     // "/api/pins/:path*",
     // "/api/users/:path*",
