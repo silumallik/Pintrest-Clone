@@ -23,26 +23,9 @@ export async function GET(req) {
       .skip(skip)
       .limit(limit);
 
-    // const { searchParams } = new URL(req.url);
-    // const exclude = searchParams.get("exclude");
-    // const page = parseInt(searchParams.get("page")) || 1;
-    // const limit = 10;
-
-    // let query = {};
-
-    // if (exclude) {
-    //   query._id = { $ne: exclude };
-    // }
-
-    // const pins = await Pin.find(query)
-    //   .sort({ createdAt: -1 })
-    //   .skip((page - 1) * limit)
-    //   .limit(limit);
-
     return NextResponse.json(pins);
   }
   catch (error) {
-    console.log(error)
     return NextResponse.json({
       message: error.message
     }, { status: 500 })
@@ -77,7 +60,6 @@ export async function POST(req) {
     return NextResponse.json(pin, { status: 201 });
 
   } catch (error) {
-    console.log("PIN CREATE ERROR:", error);
     return NextResponse.json(
       { message: error.message },
       { status: 500 }
