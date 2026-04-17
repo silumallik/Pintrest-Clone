@@ -9,10 +9,6 @@ export default function SaveButton({ pinId, initialSaved }) {
   const [saved, setSaved] = useState(initialSaved);
   const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   setSaved(initialSaved);
-  // }, [initialSaved]);
-
   const handleSave = async () => {
     try {
       // user login nahi hai
@@ -36,7 +32,7 @@ export default function SaveButton({ pinId, initialSaved }) {
       setSaved(data.saved);
 
     } catch (error) {
-      console.log(error);
+      
     } finally {
       setLoading(false);
     }
