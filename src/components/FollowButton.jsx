@@ -32,17 +32,11 @@ export default function FollowButton({
 
       const data = await res.json();
 
-      console.log("Is Following own", data.isFollowing);
-
       // ✅ server se jo state aaye wahi set karo
       setIsFollowing(data.isFollowing);
       router.refresh()
-      // setIsFollowing(true);
-      // router.refresh();
 
     } catch (error) {
-
-      console.log(error);
 
     } finally {
       setLoading(false);
