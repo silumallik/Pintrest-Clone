@@ -55,14 +55,14 @@ export default function LoginPage() {
     setType("success");
     setMessage("Login successful ✅ ");
 
-    // const sessionRes = await fetch("/api/auth/session");
-    // const sessionData = await sessionRes.json();
+    const sessionRes = await fetch("/api/auth/session");
+    const sessionData = await sessionRes.json();
 
-    // router.push(`/profile/${sessionData.user.id}`);
+    router.push(`/profile/${sessionData.user.id}`);
 
-    if (status === "authenticated" && session?.user?.id) {
-        router.push(`/profile/${session.user.id}`);
-      }
+    // if (status === "authenticated" && session?.user?.id) {
+    //     router.push(`/profile/${session.user.id}`);
+    //   }
 
   }
 
