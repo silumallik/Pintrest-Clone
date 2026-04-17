@@ -4,10 +4,17 @@ import { useState } from "react";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function LoginPage() {
   const router = useRouter();
   const { data: session, status } = useSession();
+
+  useEffect(() => {
+    if (status === "authenticated" && session?.user?.id) {
+      router.push(`/profile/${session.user.id}`);
+    }
+  }, [status, session]);
   
   const [form, setForm] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
@@ -55,11 +62,16 @@ export default function LoginPage() {
     setType("success");
     setMessage("Login successful ✅ ");
 
-    const sessionRes = await fetch(`/api/auth/session`);
-    const sessionData = await sessionRes.json();
+    // wait for session update
+    setTimeout(() => {
+      router.refresh();
+    }, 500);
 
-    console.log("sessionData:", sessionData)
-    router.push(`/profile/${sessionData.user.id}`);
+    // const sessionRes = await fetch(`/api/auth/session`);
+    // const sessionData = await sessionRes.json();
+
+    // console.log("sessionData:", sessionData)
+    // router.push(`/profile/${sessionData.user.id}`);
 
     // if (status === "authenticated" && session?.user?.id) {
     //     router.push(`/profile/${session.user.id}`);
