@@ -10,12 +10,12 @@ export default function LoginPage() {
   const router = useRouter();
   const { data: session, status } = useSession();
 
-  // useEffect(() => {
-  //   if (status === "authenticated" && session?.user?.id) {
-  //     router.push(`/profile/${session.user.id}`);
-  //     console.log("Redrict.....",session.user.id)
-  //   }
-  // }, [status, session]);
+  useEffect(() => {
+    if (status === "authenticated" && session?.user?.id) {
+      router.push(`/profile/${session.user.id}`);
+      console.log("Redrict.....",session.user.id)
+    }
+  }, [status, session]);
 
   // useEffect(() => {
   //   if (status === "authenticated") {
@@ -78,14 +78,14 @@ export default function LoginPage() {
     //   router.refresh();
     // }, 500);
 
-    console.log("STATUS:", status);
-    console.log("SESSION:", session);
+    // console.log("STATUS:", status);
+    // console.log("SESSION:", session);
 
-    const sessionRes = await fetch(`/api/auth/session`);
-    const sessionData = await sessionRes.json();
+    // const sessionRes = await fetch(`/api/auth/session`);
+    // const sessionData = await sessionRes.json();
 
-    console.log("sessionData:", sessionData)
-    router.push(`/profile/${sessionData.user.id}`);
+    // console.log("sessionData:", sessionData)
+    // router.push(`/profile/${sessionData.user.id}`);
 
     // if (status === "authenticated" && session?.user?.id) {
     //     router.push(`/profile/${session.user.id}`);
