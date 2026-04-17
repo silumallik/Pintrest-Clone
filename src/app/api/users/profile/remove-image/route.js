@@ -39,7 +39,6 @@ export async function DELETE() {
       await cloudinary.uploader.destroy(publicId);
 
     } catch (err) {
-      console.log("Cloudinary delete error:", err);
     }
 
   }
