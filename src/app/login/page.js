@@ -58,7 +58,7 @@ export default function LoginPage() {
     const sessionRes = await fetch(`/api/auth/session`);
     const sessionData = await sessionRes.json();
 
-    console.log(sessionData)
+    console.log("sessionData:", sessionData)
     router.push(`/profile/${sessionData.user.id}`);
 
     // if (status === "authenticated" && session?.user?.id) {
