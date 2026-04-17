@@ -23,13 +23,10 @@ export async function POST(req, context) {
     const targetUserId = id;
 
     const result = await toggleFollow(currentUserId, targetUserId);
-    console.log("follow result return :", result);
     
     return NextResponse.json(result);
 
   } catch (error) {
-
-    console.log("FOLLOW ERROR:", error);
 
     return NextResponse.json(
       { message: "Server Error" },
