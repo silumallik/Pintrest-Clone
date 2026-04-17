@@ -2,24 +2,6 @@ import User from "@/models/User";
 import Pin from "@/models/Pin";
 import mongoose from "mongoose";
 
-
-/* ================= GET USER ================= */
-
-// working code
-// export const getUserById = async (id) => {
-//   if (!mongoose.Types.ObjectId.isValid(id)) {
-//     return null;
-//   }
-
-//   return await User.findById(id)
-//     .populate("followers", "name image")
-//     .populate("following", "name image")
-//     .populate("savedPins")
-//     .populate("pins");
-// };
-
-
-//trying
 export async function getUserById(id, currentUserId) {
 
   const user = await User.findById(id)
@@ -52,10 +34,6 @@ export async function getUserById(id, currentUserId) {
     user.followers.some(
       (f) => f._id.toString() === currentUserId?.toString()
     );
-
-  console.log("currentuserid :",currentUserId);
-  console.log("followers:", user.followers.map(f => f._id.toString()));
-  console.log("isFollowing:", isFollowing);
 
   return {
     ...user.toObject(),
